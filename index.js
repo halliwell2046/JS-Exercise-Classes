@@ -142,13 +142,13 @@ class Instructor {
     this.age = object.age;
     this.location = object.location;
   }
+  speak(student, subject) {
+    return `${student.name} received a perfect score on ${subject}`;
+  }
   demo(subject) {
     return `Today we are learning about ${subject}`
   }
   grade(student, subject) {
-    return `${student.name} received a perfect score on ${subject}`;
-  }
-  speak(student, subject) {
     return `${student.name} received a perfect score on ${subject}`;
   }
 }
@@ -168,8 +168,22 @@ class Instructor {
         + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
-class Student {
-
+class Student extends Lambdasian{
+  constructor(object) {
+    super(object)
+    this.previousBackground = object.previousBackground,
+    this.className = object.className,
+    this.favSubjects =object.favSubjects
+  }
+  listSubjects(){
+    return `Loving ${this.favSubjects.toString()}`;
+  }
+  PRAssignment(subject){
+    return `${this.name} has submitted a PR ${subject}`
+  }
+  sprintChalleng(subject){
+    return `${this.name} has begun sprint challenge on ${subject}`
+  }
 }
 
 /*
